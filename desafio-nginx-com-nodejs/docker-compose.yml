@@ -4,12 +4,13 @@ services:
 
   db:
     image: mysql:5.7
-    command: --innodb-use-native-aio=0 # comando necessário no start do mysql - vai ser executado após o entrypoint
+    #command: --innodb-use-native-aio=0 # comando necessário no start do mysql - vai ser executado após o entrypoint
     container_name: db
     restart: always # restarta se o container cair
     tty: true # permite entra no container de modo interativo
     volumes:
-      - ./mysql:/var/lib/mysql #volume que armazena o banco
+      - ./db/mysql:/var/lib/mysql #volume que armazena o banco
+      - ./db/dump:/docker-entrypoint-initdb.d
     environment: # variáveis de ambiente para criação do banco (no caso dessa imagem que já cria o banco). Se você docker run normal, seria com a a opção -e
       - MYSQL_DATABASE=nodedb
       - MYSQL_ROOT_PASSWORD=root
@@ -22,13 +23,13 @@ services:
     container_name: app
     build:
       context: ./node
-      dockerfile: Dockerfile.prod
-    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh # usa o dockerize para aguardar o mysql subir e depois chama o entrypoint da imagem (base) node
-    command: node index.js
-    networks:
-      - node-network
+      dockerfile: Dockerfile.dev
+    #entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh # usa o dockerize para aguardar o mysql subir e depois chama o entrypoint da imagem (base) node
+    #command: node index.js
     volumes:
       - ./node:/usr/src/app
+    networks:
+      - node-network
     tty: true
     ports:
       - "3000:3000"
