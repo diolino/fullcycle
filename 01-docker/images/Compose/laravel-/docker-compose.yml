@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  laravel:
+    build: 
+      context: ./laravel
+      dockerfile: Dockerfile.prod
+    image: gtdiolino2/php-prod:latest
+    container_name: blog
+    networks:
+      - blognet
+
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile.prod
+    image: gtdiolino2/nginx-proxy:latest
+    container_name: nginx-proxy
+    networks:
+      - blognet
+    ports:
+      - "8080:80"
+
+networks:
+  blognet:
+    driver: bridge

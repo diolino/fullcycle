@@ -1,0 +1,6 @@
+FROM nginx:1.15.0-alpine
+
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d
+# quando qlq endereço for acessado no nginx, um arquivo.php tem que existir, mesmo que seja em branco para não dar 404. Mas ele vai seguir a regra location da conf
+RUN mkdir /var/www/html -p && touch /var/www/html/index.php
