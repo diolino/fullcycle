@@ -7,7 +7,7 @@ WORKDIR /app
 COPY ./go-hello-world/go.* .
 
 # Instalação dos módulos GO
-RUN go mod download
+#RUN go mod download
 
 # copiando os códigos GO
 COPY ./go-hello-world/*.go .
@@ -15,8 +15,8 @@ COPY ./go-hello-world/*.go .
 # Build da aplicação go
 RUN go build -o hello
 
-# Imagem menor
-FROM alpine:3.9 
+# Imagem menor (1MB)
+FROM scratch
 WORKDIR /app
 COPY --from=build_base /app/hello .
 
