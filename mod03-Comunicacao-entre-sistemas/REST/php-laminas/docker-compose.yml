@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+
+  db:
+    image: mysql:5.7
+    #command: --innodb-use-native-aio=0 # comando necessário no start do mysql - vai ser executado após o entrypoint
+    container_name: db
+    restart: always # restarta se o container cair
+    tty: true # permite entra no container de modo interativo
+    volumes:
+      - ./db/mysql:/var/lib/mysql #volume que armazena o banco
+      - ./db/dump:/docker-entrypoint-initdb.d
+    environment: # variáveis de ambiente para criação do banco (no caso dessa imagem que já cria o banco). Se você docker run normal, seria com a a opção -e
+      - MYSQL_DATABASE=apidb
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=gtdiolino
+      - MYSQL_PASSWORD=gtdiolino
+    networks:
+      - api-network
+  
+  laminas:
+    container_name: laminas
+    build:
+      context: ./api-tools-skeleton
+      dockerfile: Dockerfile
+    image: gtdiolino2/laminas
+    #volumes:
+    #   - ./api-tools-skeleton:/var/www
+    #entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh # usa o dockerize para aguardar o mysql subir e depois chama o entrypoint da imagem (base) node
+    #command: node src/index.js
+    networks:
+      - api-network
+    tty: true
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    
+networks:
+  api-network:
+    driver: bridge
