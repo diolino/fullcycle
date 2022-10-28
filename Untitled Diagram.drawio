@@ -1,1 +1,87 @@
-<mxfile host="app.diagrams.net" modified="2022-10-28T12:17:38.220Z" agent="5.0 (X11)" version="20.5.1" etag="v_Ln1lfYybLnw5bfechC" type="github"><diagram id="BBrZ1WvkOTSDsXhA3l47">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-10-28T12:31:08.426Z" agent="5.0 (X11)" etag="M_3nJRpsVgeJXfgdfzGJ" version="20.5.1" type="github" pages="2">
+  <diagram id="BBrZ1WvkOTSDsXhA3l47" name="FullCycle">
+    <mxGraphModel dx="1990" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="u3zsVhAimYHGb1ZOUoQ_-3" value="BACK-END" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="900" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="u3zsVhAimYHGb1ZOUoQ_-9" value="Integração/Comunicação Entre Sistemas" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="70" y="300" width="420" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="u3zsVhAimYHGb1ZOUoQ_-2" value="FRONT-END" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="900" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="u3zsVhAimYHGb1ZOUoQ_-5" value="Arquitetura" style="rounded=1;whiteSpace=wrap;html=1;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="690" y="390" width="680" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u3zsVhAimYHGb1ZOUoQ_-6" value="Rest" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="80" y="334" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u3zsVhAimYHGb1ZOUoQ_-7" value="gRPC" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="210" y="334" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u3zsVhAimYHGb1ZOUoQ_-8" value="GraphQL" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="330" y="334" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="u3zsVhAimYHGb1ZOUoQ_-10" value="PHP-Laminas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="390" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u3zsVhAimYHGb1ZOUoQ_-11" value="Go" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="384" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="u3zsVhAimYHGb1ZOUoQ_-12" value="INFRAESTRUTURA" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="40" y="480" width="900" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="u3zsVhAimYHGb1ZOUoQ_-13" value="Docker" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="70" y="510" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="hjVQIXdA_lhOeSvTBhe0" name="Eu-profissional">
+    <mxGraphModel dx="1990" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wj771pGBcYkQLlCVWZxy-1" value="Inovação e Criação de Produtos" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="40" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wj771pGBcYkQLlCVWZxy-2" value="Modelagem de Negócios" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="160" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wj771pGBcYkQLlCVWZxy-3" value="Finanças Corporativas" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="260" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wj771pGBcYkQLlCVWZxy-4" value="Precificação" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="360" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wj771pGBcYkQLlCVWZxy-5" value="Métodos Ágeis (SaFe)" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FF3333;" vertex="1" parent="1">
+          <mxGeometry x="470" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wj771pGBcYkQLlCVWZxy-6" value="Design Thinking" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="580" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wj771pGBcYkQLlCVWZxy-7" value="AWS" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="40" y="565" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wj771pGBcYkQLlCVWZxy-8" value="Azure" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="160" y="565" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wj771pGBcYkQLlCVWZxy-9" value="Terraform" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="40" y="455" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wj771pGBcYkQLlCVWZxy-10" value="Git" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wj771pGBcYkQLlCVWZxy-11" value="&lt;div&gt;Colaboração&lt;/div&gt;&lt;div&gt;Google&lt;/div&gt;&lt;div&gt;365&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="160" y="260" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wj771pGBcYkQLlCVWZxy-12" value="CI/CD" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFF2CC;" vertex="1" parent="1">
+          <mxGeometry x="40" y="360" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
