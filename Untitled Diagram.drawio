@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-10-28T12:31:08.426Z" agent="5.0 (X11)" etag="M_3nJRpsVgeJXfgdfzGJ" version="20.5.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-10-28T12:33:58.877Z" agent="5.0 (X11)" etag="otsa7x0oDnlkbV48tJvx" version="20.5.1" type="github" pages="2">
   <diagram id="BBrZ1WvkOTSDsXhA3l47" name="FullCycle">
     <mxGraphModel dx="1990" dy="749" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -80,6 +80,21 @@
         </mxCell>
         <mxCell id="wj771pGBcYkQLlCVWZxy-12" value="CI/CD" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFF2CC;" vertex="1" parent="1">
           <mxGeometry x="40" y="360" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="N6KaOFyLiRC_qxgk82_4-1" value="java" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="N6KaOFyLiRC_qxgk82_4-2" value="Python" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="160" y="680" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="N6KaOFyLiRC_qxgk82_4-3" value="Go" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="280" y="680" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="N6KaOFyLiRC_qxgk82_4-4" value="C" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="410" y="680" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="N6KaOFyLiRC_qxgk82_4-5" value="JavaScript" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="520" y="680" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
