@@ -1,0 +1,71 @@
+go get github.com/99designs/gqlgen
+go run github.com/99designs/gqlgen ini
+
+
+No play ground
+
+mutation createCategoty {
+  createCategory(input: 
+    {name: "Eróticos", 
+      description: "Massagem Tântrica"}){
+    id
+    name
+    description
+	}
+}
+
+mutation createCourse {
+  createCourse(input: 
+    {
+      name: "Massagem Tântrica", 
+      description: "Massagem Tântrica", 
+      categoryId: "e6e111ad-2cc0-4666-bfae-9ccd32a69a5b"
+    }){
+    id
+    name
+    description
+	}
+}
+
+query queryCategories {
+  categories {
+    id
+    name
+  }
+}
+
+query queryCategoriesWithCourses {
+  categories {
+    id
+    name
+    courses {
+      id
+      name 
+      description
+    }
+  }
+}
+
+query queryCourses {
+  courses {
+    id
+    name
+    description
+    category {
+      id
+    }
+  }
+}
+
+query queryCoursesWithCategories {
+  courses {
+    id
+    name
+    description
+    category {
+      id
+      name
+      description
+    }
+  }
+}
