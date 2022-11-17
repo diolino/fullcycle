@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+  consulServer01:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gtdiolino2/consul
+    container_name: consulServer01
+    hostname: consulServer01
+    command: ['tail', '-f', '/dev/null'] # para manter o processo rodando
+    volumes:
+      - ./servers/server01:/etc/consul.d
+    ports:
+      - "8500:8500"
+  consulServer02:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gtdiolino2/consul
+    container_name: consulServer02
+    hostname: consulServer02
+    command: ['tail', '-f', '/dev/null']
+    volumes:
+      - ./servers/server02:/etc/consul.d
+  consulServer03:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gtdiolino2/consul
+    container_name: consulServer03
+    hostname: consulServer03
+    command: ['tail', '-f', '/dev/null'] # para manter o processo rodando
+    volumes:
+      - ./servers/server03:/etc/consul.d    
+  consulClient01:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gtdiolino2/consul
+    container_name: consulClient01
+    hostname: consulClient01
+    command: 'tail -f /dev/null' # para manter o processo rodando
+    volumes:
+      - ./clients/consul01:/etc/consul.d   
+  consulClient02:
+    container_name: consulClient02
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gtdiolino2/consul
+    hostname: consulClient02
+    command: ['nginx', '-g', 'daemon off;'] # para manter o processo rodando
+    volumes:
+      - ./clients/consul02:/etc/consul.d    

@@ -1,0 +1,7 @@
+{
+    "server":false,
+    "bind_addr": "172.26.0.5",    
+    "data_dir": "/var/lib/consul",
+    "retry_join": ["172.26.0.3", "172.26.0.4", "172.26.0.6"],
+    "encrypt": "mvy31iw3XeRSe8JE5uQFPjm2nRuUXNuao17qu6svONc="
+}

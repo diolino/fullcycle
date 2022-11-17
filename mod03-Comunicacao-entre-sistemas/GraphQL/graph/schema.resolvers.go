@@ -50,7 +50,7 @@ for _, course := range courses {
 	return coursesModel, nil
 	}
 
-// Category is the resolver for the category field.
+// Category is the resolver for the category field. - Pega a Categoria de m curso
 	func (r *courseResolver) Category(ctx context.Context, obj *model.Course) (*model.Category, error) {
 		category, err := r.CategoryDB.FindByCourseId(obj.ID)
 		if err != nil {
