@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  typescript:
+    container_name: typescript
+    build:
+      context: ./node
+      dockerfile: Dockerfile.dev
+    image: gtdiolino2/typescript
+    volumes:
+       - ./node:/usr/src/app
+    command: ['tail', '-f', '/dev/null'] # para manter o processo rodando
+    networks:
+      - node-network
+    tty: true
+    ports:
+      - "3000:3000"
+    
+networks:
+  node-network:
+    driver: bridge

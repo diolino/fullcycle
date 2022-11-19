@@ -1,0 +1,10 @@
+FROM node:15
+
+WORKDIR /usr/src/app
+
+#RUN npm i typescript --save-dev
+# npm i tslint --save-dev
+#npx tsc --init # Achoq ue não precisa
+#npx tslint --init
+
+EXPOSE 3000
