@@ -6,5 +6,7 @@ WORKDIR /usr/src/app
 # npm i tslint --save-dev
 #npx tsc --init # Achoq ue não precisa
 #npx tslint --init
-
+#npm i -D jest @types/jest ts-node --save-dev
+#npm i -D @swc/jest @swc/cli @swc/core
+#npx jest --init
 EXPOSE 3000
