@@ -14,6 +14,18 @@ export default class Order {
     this.validate();
   }
 
+  
+  public set items(items : OrderItem[]) {
+    this._items = items;
+  }
+
+  
+  public set customerId(customerId : string) {
+    this._customerId = customerId;
+  }
+  
+  
+
   get id(): string {
     return this._id;
   }
