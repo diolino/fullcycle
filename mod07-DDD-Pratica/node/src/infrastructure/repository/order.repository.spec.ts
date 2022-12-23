@@ -94,24 +94,23 @@ describe("Order repository test", () => {
 
     //create product
     const productRepository = new ProductRepository();
-    const product = new Product(uuidv4(), "Product 1", 10);
-    await productRepository.create(product);
+    const product1 = new Product(uuidv4(), "Product 1", 10);
+    await productRepository.create(product1);
 
     //create OrderItem
-    const ordemItem = new OrderItem(
+    const ordemItem1 = new OrderItem(
       uuidv4(),
-      product.name,
-      product.price,
-      product.id,
+      product1.name,
+      product1.price,
+      product1.id,
       2
     );
 
     //Create order
-    const order = new Order(uuidv4(), customer.id, [ordemItem]);
+    const order = new Order(uuidv4(), customer.id, [ordemItem1]);
 
     const orderRepository = new OrderRepository();  
-    //orderRepository._sequelize=sequelize;
-    
+        
     await orderRepository.create(order);
 
     const orderModel = await OrderModel.findOne({
@@ -125,19 +124,19 @@ describe("Order repository test", () => {
       total: order.total(),
       items: [
         {
-          id: ordemItem.id,
-          name: ordemItem.name,
-          price: ordemItem.price,
-          quantity: ordemItem.quantity,
+          id: ordemItem1.id,
+          name: ordemItem1.name,
+          price: ordemItem1.price,
+          quantity: ordemItem1.quantity,
           order_id: order.id,
-          product_id: product.id,
+          product_id: product1.id,
         },
       ],
     });
 
-    ordemItem.quantity = ordemItem.quantity * 2;
+    ordemItem1.quantity = ordemItem1.quantity * 2;
    
-    order.items =  [ordemItem];
+    order.items =  [ordemItem1];
     expect(order.total()).toBe(40);
     //order.customerId = "13";
     //sequelize.transaction();
@@ -146,29 +145,93 @@ describe("Order repository test", () => {
 
 
     let orderModelUpdated = await OrderModel.findOne({
-      where: { id: orderModel.id }/*,
-      include: ["items"],*/
+      where: { id: orderModel.id },
+      include: ["items"],
     });
 
-    expect(orderModelUpdated.total).toBe(order.total());
-    /*por algum motivo quando coloco o total dentro do "toStrictEqual" o teste não passa, mesmo não apresentando onde está o erro. 
-    Separando a verificação em outra linha passa.*/
-    expect(orderModelUpdated.toJSON()).toStrictEqual({      
-      customer_id: customer.id,
-      id: order.id,      
-      items: [
-        {
-          id: ordemItem.id,
-          name: ordemItem.name,
-          price: ordemItem.price,
-          quantity: ordemItem.quantity,
-          order_id: order.id,
-          product_id: product.id,
-        },
-      ],
-      total: order.total(),
+    expect(orderModelUpdated.total).toBe(40);
+    expect(orderModelUpdated.items.length).toBe(1);
+    
+    //create new product
+    
+    const product2 = new Product(uuidv4(), "Product 2", 20);
+    await productRepository.create(product2);
+
+    //create new OrderItem
+    const ordemItem2 = new OrderItem(
+      uuidv4(),
+      product2.name,
+      product2.price,
+      product2.id,
+      3
+    );
+
+    order.items = [ordemItem1, ordemItem2];
+    
+    await orderRepository.update(order);
+
+    let orderModelUpdatedAgain = await OrderModel.findOne({
+      where: { id: orderModel.id },
+      include: ["items"],
     });
-    //(await sequelize.transaction()).commit();
+
+    expect(orderModelUpdatedAgain.total).toBe(4*10+3*20);
+    expect(orderModelUpdatedAgain.items.length).toBe(2);
+
+    //remove an Iten
+    order.items = [ordemItem2];    
+    
+    await orderRepository.update(order);
+
+    let orderModelUpdatedOneMoreTime = await OrderModel.findOne({
+      where: { id: orderModel.id },
+      include: ["items"],
+    });
+
+    expect(orderModelUpdatedOneMoreTime.total).toBe(3*20);
+    expect(orderModelUpdatedOneMoreTime.items.length).toBe(1);
+  
+  });
+
+  it("should find all orders", async () => {
+    const customerRepository = new CustomerRepository();
+    const orderRepository = new OrderRepository();
+    const productRepository = new ProductRepository();
+
+    const customer = new Customer(uuidv4(), "Customer 1");
+    const address = new Address("Street 1", 1, "Zipcode 1", "City 1");
+    customer.changeAddress(address);
+    await customerRepository.create(customer);
+    
+    const product = new Product(uuidv4(), "Product 1", 10);
+    await productRepository.create(product);
+    //Order 1
+    const ordemItem1 = new OrderItem(
+      uuidv4(),
+      product.name,
+      product.price,
+      product.id,
+      2
+    );
+    const order1 = new Order(uuidv4(), customer.id, [ordemItem1]);  
+    await orderRepository.create(order1);
+    //Order 2
+    const ordemItem2 = new OrderItem(
+      uuidv4(),
+      product.name,
+      product.price,
+      product.id,
+      2
+    );
+    const order2 = new Order(uuidv4(), customer.id, [ordemItem2]);    
+    await orderRepository.create(order2);
+
+    const foundOrders = await orderRepository.findAll();
+    const orders = [order1, order2];
+
+    expect(orders).toEqual(foundOrders);    
+
+    
   });
 
 });

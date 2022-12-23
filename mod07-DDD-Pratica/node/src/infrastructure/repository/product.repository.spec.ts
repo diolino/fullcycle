@@ -82,7 +82,7 @@ describe("Product repository test", () => {
     });
   });
 
-  /*it("should find all products", async () => {
+  it("should find all products", async () => {
     const productRepository = new ProductRepository();
     const product = new Product(uuidv4(), "Product 1", 100);
     await productRepository.create(product);
@@ -94,6 +94,6 @@ describe("Product repository test", () => {
     const products = [product, product2];
 
     expect(products).toEqual(foundProducts);    
-  });*/
+  });
   
 });

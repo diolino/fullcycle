@@ -19,12 +19,22 @@ export default class OrderRepository implements OrderRepositoryInterface{
   
   
 
-  find(id: string): Promise<Order> {
-    throw new Error("Method not implemented.");
+  async find(id: string): Promise<Order> {
+    const orderModel = await OrderModel.findOne({ where: { id } });
+    const orderItens = orderModel.items.map((orderItemModel) =>
+    new OrderItem(orderItemModel.id, orderItemModel.name,orderItemModel.price,orderItemModel.product_id,orderItemModel.quantity));
+    return new Order(orderModel.id, orderModel.customer_id, orderItens);
   }
 
-  findAll(): Promise<Order[]> {
-    throw new Error("Method not implemented.");
+  async findAll(): Promise<Order[]> {
+    const orderModels = await OrderModel.findAll({include: [OrderItemModel]});
+    return orderModels.map((orderModel) =>
+      new Order(orderModel.id, orderModel.customer_id, 
+        orderModel.items.map((orderItemModel) =>
+          new OrderItem(orderItemModel.id, orderItemModel.name,orderItemModel.price,orderItemModel.product_id,orderItemModel.quantity)
+        )
+      )
+    );
   }
 
   async create(entity: Order): Promise<void> {
@@ -87,14 +97,13 @@ export default class OrderRepository implements OrderRepositoryInterface{
       )
     );
 
-    const itemsDelta = this.getDelta(ordersItemFromBd, ordersItemFromRequest);
+    const itemsDelta = this.getDelta(ordersItemFromBd, ordersItemFromRequest);   
 
-    orderModel.total = 55;//entity.total();
-
-    // Update addresses    
+    // Update OrderItens    
     await Promise.all([
       itemsDelta.added.map(async item => {
-        orderModel.$create('item', item);
+        item.save();
+        //orderModel.$create('item', item);
       }),
       itemsDelta.changed.map(async itemData => {
         const item = orderModel.items.find(_item => _item.id === itemData.id);
