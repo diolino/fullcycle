@@ -1,6 +1,12 @@
 # fullcycle
 Repositorio para o curso Full Cycle Development
 
+#### Desafios do Módulo 07 - DDD: Modelagem Tática e Patterns ###
+
+- # Desafio dos Repositórios
+    * Código disponível no diretório "mod07-DDD-Pratica/node/". 
+    * Basta entar no diretório e rodar "npm install" e em seguida "npm test npm test src/infrastructure/repository/order.repository.spec.ts" para testar os repositórios e validar o desafio. Caso deseje testar todo o projeto, basta roda "npm test"
+
 #### Desafios do Módulo 01 - Docker ###
 - # Desafio Nginx com Node.js
     * Código disponível no diretório "desafio-nginx-com-nodejs". 
