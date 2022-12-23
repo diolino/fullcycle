@@ -1,7 +1,7 @@
 # fullcycle
 Repositorio para o curso Full Cycle Development
 
-#### Desafios do Módulo 07 - DDD: Modelagem Tática e Patterns ###
+# Desafios do Módulo 07 - DDD: Modelagem Tática e Patterns #
 
 - # Desafio dos Repositórios
     * Código disponível no diretório "mod07-DDD-Pratica/node/". 
