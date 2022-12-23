@@ -1,7 +1,7 @@
 # fullcycle
 # Repositorio para o curso Full Cycle Development
 
-# Desafios do Módulo 07 - DDD: Modelagem Tática e Patterns #
+> # Desafios do Módulo 07 - DDD: Modelagem Tática e Patterns #
 
 - ### Desafio dos Repositórios
     * Código disponível no diretório "mod07-DDD-Pratica/node/". 
@@ -9,7 +9,7 @@
 
 
 
-# Desafios do Módulo 01 - Docker ###
+> # Desafios do Módulo 01 - Docker ###
 - ### Desafio Nginx com Node.js
     * Código disponível no diretório "desafio-nginx-com-nodejs". 
     * Basta rodar o docker compose no diretório e acessar http://localhost:8080 para cadastrar as pessoas. A arquiteura contém 3 containers rodando na rede       bridge "node-network":
