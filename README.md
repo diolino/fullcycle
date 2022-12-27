@@ -5,7 +5,7 @@
 
 - ### Implementando Domain Events de Customer
     * Código disponível no diretório **"mod07-DDD-Pratica/node/"**. 
-    * Basta entar no diretório e rodar **"npm install"** e em seguida **"npm test npm test src/domain/customer/event/customer-event-dispatcher.spec.ts"** para testar o handler que executa os eventos de customer (create, change Address) e validar o desafio. Caso deseje testar todo o projeto, basta roda **"npm test"**
+    * Basta entar no diretório e rodar **"npm install"** e em seguida **"npm test src/domain/customer/event/customer-event-dispatcher.spec.ts"** para testar o handler que executa os eventos de customer (create, change Address) e validar o desafio. Caso deseje testar todo o projeto, basta roda **"npm test"**
 
 - ### Desafio dos Repositórios
     * Código disponível no diretório **"mod07-DDD-Pratica/node/"**. 
