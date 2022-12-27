@@ -234,7 +234,7 @@ describe("Order repository test", () => {
     
   });
 
-  it("should find an orders", async () => {
+  it("should find an order", async () => {
     const customerRepository = new CustomerRepository();
     const orderRepository = new OrderRepository();
     const productRepository = new ProductRepository();
