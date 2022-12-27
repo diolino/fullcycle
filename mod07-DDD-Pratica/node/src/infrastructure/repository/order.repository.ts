@@ -10,17 +10,8 @@ import Delta from "./Delta"
 
 export default class OrderRepository implements OrderRepositoryInterface{
  
-  /*declare _sequelize: Sequelize;
-
- 
-  public set sequelize(sequelize : Sequelize) {
-    this._sequelize = sequelize;
-  }*/
-  
-  
-
   async find(id: string): Promise<Order> {
-    const orderModel = await OrderModel.findOne({ where: { id } });
+    const orderModel = await OrderModel.findOne({ where: { id }, include: [OrderItemModel]});
     const orderItens = orderModel.items.map((orderItemModel) =>
     new OrderItem(orderItemModel.id, orderItemModel.name,orderItemModel.price,orderItemModel.product_id,orderItemModel.quantity));
     return new Order(orderModel.id, orderModel.customer_id, orderItens);
